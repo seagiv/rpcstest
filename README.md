@@ -94,3 +94,46 @@ HTTP requests:
 Count: 2 -> 948  
 200: 2 -> 513  
 429: 0 -> 435  
+
+Additional tests without using stress tester (1): burst
+limit_req_zone $rate_limit_by zone=limit:10m rate=240r/m;  
+q50: 268ms  
+CPU: 4%  
+Count: 1.67  
+
+Additional tests without using stress tester (2): still brust
+limit_req_zone $rate_limit_by zone=limit:10m rate=480r/m;  
+q50: 170ms  
+CPU: 5%  
+Count: 4.35  
+
+
+Additional tests without using stress tester (2): still brust
+limit_req_zone $rate_limit_by zone=limit:10m rate=960r/m;  
+q50: 65ms  
+CPU: 4%  
+Count: 4.39  
+
+Additional tests without using stress tester (3): still brust
+limit_req_zone $rate_limit_by zone=limit:10m rate=1920r/m;  
+q50: 26ms  
+CPU: 4%  
+Count: 4.37  
+
+Additional tests without using stress tester (4): still brust
+limit_req_zone $rate_limit_by zone=limit:10m rate=3840r/m;  
+q50: 13ms  
+CPU: 5%  
+Count: 4.36  
+
+Additional tests without using stress tester (5): still brust
+limit_req_zone $rate_limit_by zone=limit:10m rate=7680r/m;  
+q50: 5ms  
+CPU: 5%  
+Count: 4.39  
+
+Additional tests without using stress tester (6): <- burst not used because everything within limit
+limit_req_zone $rate_limit_by zone=limit:10m rate=15360r/m;  
+q50: 5ms  
+CPU: 5%  
+Count: 4.29  
