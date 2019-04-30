@@ -1,13 +1,13 @@
 # rpcstest
 RPC stress tester
 
-all test used ./st -url http://{DEV  parity eu_west_1_kitty_flowers ip}/ -n 1000000 -r 100
+all test used ./st -url http://{DEV  parity eu_west_1_kitty_flowers ip}/ -n 1000000 -r 100  
 
-1. regualr configuration, about 790 r/s
+1. regualr configuration, about 790 r/s  
 
-limit_req_zone $rate_limit_by zone=limit:10m rate=240r/m;
-limit_req_status 429;
-limit_req zone=limit burst=60;
+limit_req_zone $rate_limit_by zone=limit:10m rate=240r/m;  
+limit_req_status 429;  
+limit_req zone=limit burst=60;  
 
 MEM: 40% -> 45%
 CPU: 2% -> 20%
