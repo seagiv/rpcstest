@@ -3,6 +3,8 @@ RPC stress tester
 
 all test used ./st -url http://{DEV  parity eu_west_1_kitty_flowers ip}/ -n 1000000 -r 100  
 
+1000000 requests in 100 Go routines  
+
 1. regualr configuration, about 790 r/s  
 
 limit_req_zone $rate_limit_by zone=limit:10m rate=240r/m;  
