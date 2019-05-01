@@ -137,3 +137,10 @@ limit_req_zone $rate_limit_by zone=limit:10m rate=15360r/m;
 q50: 5ms  
 CPU: 5%  
 Count: 4.29  
+
+Additional tests without using stress tester (7):
+limit_req_zone $rate_limit_by zone=limit:10m rate=360r/m;  
+limit_req zone=limit burst=60 nodelay;  
+q50: 3ms  
+CPU: 5%  
+Count: 4.29  
